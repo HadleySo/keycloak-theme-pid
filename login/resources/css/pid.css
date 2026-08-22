@@ -1,0 +1,405 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Stack Sans Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 150%;
+}
+
+hr {
+    color: lightgray;
+    border-top: 1px lightgray;
+    background-color: lightgray;
+}
+
+/* SPACING */
+
+.pidBody {
+    display: flex;
+    align-items: center;
+    height: 80vh;
+    max-height: 100vh;
+}
+
+.pidContent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 400px;
+    max-width: 440px;
+    margin: 0 auto;
+    max-height: 80vh
+}
+
+.pidLogin {
+    background-color: #ffffff;
+    padding: 30px;
+    border: lightgray solid 1px;
+    border-radius: 10px;
+}
+
+
+#kc-header {
+    display: flex;
+    align-content: end;
+    flex-direction: row;
+    padding: 15px 10px;
+}
+
+#kc-form-login {
+    margin-top: 22px;
+}
+
+/* LANG */
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0; 
+}
+#lang-select-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Size of the icon button */
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    /* Hide the text */
+    color: transparent;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* Use your SVG as the visible icon */
+    background-image: url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' viewBox='0 0 16 16'>\ <path d='M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z'/>\ <path d='M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31'/>\ </svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+}
+
+/* TEXT */
+
+@font-face {
+    font-family:Stack Sans Headline;
+    src:url(../fonts/StackSansHeadline%5Bwght%5D.woff2) format("woff2-variations")
+}
+@font-face {
+    font-family:Stack Sans Text;
+    src:url(../fonts/StackSansText%5Bwght%5D.woff2) format("woff2-variations")
+}
+@font-face {
+    font-family:IBM Plex Mono;
+    src:url(../fonts/IBMPlexMono-Regular.woff2) format("woff2")
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Stack Sans Headline', 'Stack Sans Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+h1 {
+    margin: 0;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 20px;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #e2793b;
+}
+a:hover {
+    color: gray;
+}
+
+ul, ol {
+    padding: 0px;
+    list-style: none;
+    margin-top: 5px;
+}
+
+#kc-header-wrapper {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: 200;
+}
+#kc-page-title {
+    padding-bottom: 10px;
+}
+
+#pidFooter {
+    font-weight: 200;
+    font-size: 11px;
+    padding: 10px;
+    line-height: 1rem;
+}
+#pidFooter > * {
+    display: inline;
+}
+#input-error {
+    color: red;
+}
+/* FORMS */
+
+.form-group {
+    position: relative;
+    width: 100%;
+}
+.form-group input:is(
+    [type="text"],
+    [type="password"],
+    [type="email"],
+    [type="number"],
+    [type="search"],
+    [type="tel"],
+    [type="url"]
+) {
+    margin-bottom: 10px;
+    margin-top: 14px;
+}
+.form-label-bold {
+    position: absolute;
+    top: -9px;
+    left: 12px;
+    z-index: 1;
+    padding: 0 5px;
+    background: white; /* match your form/page background */
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    font-weight: 300;
+}
+
+.form-label-bold:has(+ .required)::after {
+    /* Add astrix to required */
+    content: " *";
+    color: #dc2626;
+}
+.form-group:not(:has(input)) .form-label-bold {
+    /* Hide extra label on section titles */
+    display: none;
+}
+.form-group:has(input[type="checkbox"]) .form-label-bold {
+    /* Fix spacing on checkbox */
+    position: static;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: darkgray;
+}
+
+.form-control:focus {
+    border-color: #666;
+}
+
+.form-group > div[dir="ltr"] {
+    position: relative;
+    width: 100%;
+}
+
+.form-group .form-control {
+    width: 100%;
+    padding-right: 45px; /* leave room for the button */
+}
+
+.form-group [data-password-toggle] {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 2;
+    border: 0;
+    background: transparent;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.form-group .required {
+    display: none;
+}
+
+#kc-form-buttons {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 5px;
+}
+
+#kc-login, #kc-form-buttons > .button, .button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 16px;
+    border: 1px solid #333;
+    border-radius: 6px;
+
+    background: #333;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, transform .1s ease;
+    margin-bottom: 10px;
+}
+
+#kc-login:hover {
+    background: #444;
+    border-color: #444;
+}
+
+#kc-login:focus {
+    outline: none;
+    border-color: darkgray;
+    box-shadow: 0 0 0 3px rgba(128, 128, 128, .25);
+}
+
+#kc-login:active {
+    transform: translateY(1px);
+}
+
+#kc-login:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+#kc-registration-terms-text {
+    padding-bottom: 15px;
+}
+
+#kc-info {
+    padding-top: 15px;
+}
+/* FORM METHOD SELECTOR */
+
+#kc-select-credential-form {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 15px 0px;
+}
+
+#kc-select-credential-form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#kc-select-credential-form button {
+    /* Authentication option buttons */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+
+    padding: 12px 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    background: #fff;
+    color: #111827;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease,
+        transform .1s ease;
+}
+
+
+#kc-select-credential-form button > div:nth-child(2) {
+    /* Title + description container */
+    flex: 1;
+}
+
+#kc-select-credential-form button > div:nth-child(2) > div:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+#kc-select-credential-form button > div:nth-child(2) > div:last-child {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #6b7280;
+}
+
+
+#kc-select-credential-form button:hover {
+    border-color: #9ca3af;
+    background: #f9fafb;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+#kc-social-providers {
+    padding: 10px 2px;
+}
+
+#kc-social-providers * > a, #kc-social-providers > a {
+    padding-right: 10px;
+    padding-left: 0px;
+}
+
+#kc-social-providers * > li {
+    display: inline-block;
+}
+
+#authenticateWebAuthnButton {
+    margin-bottom: 15px;
+}
+
+/* #kc-social-providers::after {
+    content: "";
+
+    border-radius: 4px;
+    font-weight: 200;
+    font-size: 1px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+}
+
+#kc-social-providers:hover::after {
+    font-size: 13px;
+    content: "By clicking the buttons above, you consent to the transfer of your request to the provider and to request your user id, login name, name, and e-mail for authenticating you.";
+    opacity: 1;
+    visibility: visible;
+} */
