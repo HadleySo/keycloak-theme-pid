@@ -3,11 +3,19 @@ body {
     font-family: 'Stack Sans Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 150%;
 }
+html[data-theme="dark"] body {
+    background-color: #0B0B0B;
+    color: #eae4de;
+}
 
 hr {
     color: lightgray;
     border-top: 1px lightgray;
     background-color: lightgray;
+}
+html[data-theme="dark"] hr {
+    color: #2C2C2C;
+    background-color: #2C2C2C;
 }
 
 /* SPACING */
@@ -39,7 +47,10 @@ hr {
     border: lightgray solid 1px;
     border-radius: 10px;
 }
-
+html[data-theme="dark"] .pidLogin{
+    background-color: #000000;
+    border-color: #2C2C2C;
+}
 
 #kc-header {
     display: flex;
@@ -126,6 +137,9 @@ a, a:visited {
 a:hover {
     color: gray;
 }
+html[data-theme="dark"] a:hover {
+    color: #7F7F7F;
+}
 
 ul, ol {
     padding: 0px;
@@ -189,6 +203,9 @@ ul, ol {
     letter-spacing: 0.04em;
     font-weight: 300;
 }
+html[data-theme="dark"] .form-label-bold {
+    background: black;
+}
 
 .form-label-bold:has(+ .required)::after {
     /* Add astrix to required */
@@ -221,13 +238,17 @@ ul, ol {
     border-radius: 4px;
     outline: none;
 }
-
-.form-control:focus {
-    border-color: darkgray;
+html[data-theme="dark"] .form-control {
+    border-color: #333333;
+    background-color: inherit;
+    color: inherit;
 }
 
 .form-control:focus {
     border-color: #666;
+}
+html[data-theme="dark"] .form-control:focus {
+    border-color: #999999;
 }
 
 .form-group > div[dir="ltr"] {
@@ -283,16 +304,27 @@ ul, ol {
     transition: background-color .2s ease, border-color .2s ease, transform .1s ease;
     margin-bottom: 10px;
 }
+html[data-theme="dark"] #kc-login, html[data-theme="dark"] #kc-form-buttons > .button, html[data-theme="dark"] .button {
+    background: rgb(194, 194, 194);
+    color: black;
+}
 
 #kc-login:hover {
     background: #444;
     border-color: #444;
+}
+html[data-theme="dark"] #kc-login:hover {
+    background: #BBBBBB;
+    border-color: #BBBBBB;
 }
 
 #kc-login:focus {
     outline: none;
     border-color: darkgray;
     box-shadow: 0 0 0 3px rgba(128, 128, 128, .25);
+}
+html[data-theme="dark"] #kc-login:focus {
+    border-color: #565656;
 }
 
 #kc-login:active {
@@ -349,6 +381,11 @@ ul, ol {
         box-shadow .2s ease,
         transform .1s ease;
 }
+html[data-theme="dark"] #kc-select-credential-form button {
+    background: #000;
+    color: #EEE7D8;
+    border-color: #2E2A24;
+}
 
 
 #kc-select-credential-form button > div:nth-child(2) {
@@ -362,11 +399,17 @@ ul, ol {
     color: #111827;
     margin-bottom: 4px;
 }
+html[data-theme="dark"] #kc-select-credential-form button > div:nth-child(2) > div:first-child {
+    color: #EEE7D8;
+}
 
 #kc-select-credential-form button > div:nth-child(2) > div:last-child {
     font-size: 14px;
     line-height: 1.4;
     color: #6b7280;
+}
+html[data-theme="dark"] #kc-select-credential-form button > div:nth-child(2) > div:last-child {
+    color: #948D7F;
 }
 
 
@@ -374,6 +417,10 @@ ul, ol {
     border-color: #9ca3af;
     background: #f9fafb;
     box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+html[data-theme="dark"] #kc-select-credential-form button:hover {
+    border-color: #635C50;
+    background: #060504;
 }
 
 #kc-social-providers {
@@ -393,21 +440,3 @@ ul, ol {
     margin-bottom: 15px;
 }
 
-/* #kc-social-providers::after {
-    content: "";
-
-    border-radius: 4px;
-    font-weight: 200;
-    font-size: 1px;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease;
-}
-
-#kc-social-providers:hover::after {
-    font-size: 13px;
-    content: "By clicking the buttons above, you consent to the transfer of your request to the provider and to request your user id, login name, name, and e-mail for authenticating you.";
-    opacity: 1;
-    visibility: visible;
-} */

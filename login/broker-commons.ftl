@@ -6,6 +6,7 @@
                 <button class="${properties.kcButtonClass!} button-alt" type="submit" name="authenticationExecution" value="${authenticationSelection.authExecId}" id="ext-qr-code-login" style="justify-content: center;">
                     ${msg('${authenticationSelection.displayName}')}
                 </button>
+            <#elseif '${authenticationSelection.displayName}' == "ext-passkey-welcome-username-display-name">
             <#elseif '${authenticationSelection.displayName}' != "auth-username-password-form-display-name" && '${authenticationSelection.displayName}' != "home-idp-discovery-display-name">
 
                 <#if '${authenticationSelection.displayName}' == "webauthn-passwordless-display-name">

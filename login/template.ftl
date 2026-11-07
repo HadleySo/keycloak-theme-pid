@@ -2,7 +2,7 @@
 <#import "theme-resources.ftl" as themeResourceTags>
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false>
 <!DOCTYPE html>
-<html class="${properties.kcHtmlClass!}" lang="${lang}"<#if realm.internationalizationEnabled> dir="${(locale.rtl)?then('rtl','ltr')}"</#if>>
+<html class="${properties.kcHtmlClass!}" data-theme="dark" lang="${lang}"<#if realm.internationalizationEnabled> dir="${(locale.rtl)?then('rtl','ltr')}"</#if>>
 
 <head>
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
     <#if themeResources?? && themeResources.favicons?has_content>
         <@themeResourceTags.renderFavicons themeResources.favicons url.resourcesPath />
     <#else>
-        <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
+        <link rel="icon" href="https://static.hadleyso.com/favicon/favicon.ico" />
     </#if>
     <#if themeResources?? && themeResources.stylesCommon?has_content>
         <@themeResourceTags.renderStyles themeResources.stylesCommon url.resourcesCommonPath />
@@ -173,6 +173,40 @@
                         </div>
                     </#if>
                 </#if>
+
+                <!-- Dark Mode Toggle -->
+                <button type="button"
+                        id="theme-toggle"
+                        class="theme-toggle"
+                        aria-label="Switch to dark mode"
+                        title="Toggle dark mode">
+
+                    <!-- Moon icon -->
+                    <svg id="moon-icon" class="theme-icon" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor"
+                        stroke-width="1.7" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5
+                                8.5 8.5 0 1 0 20.5 14.2Z"/>
+                    </svg>
+
+                    <!-- Sun icon -->
+                    <svg id="sun-icon" class="theme-icon" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor"
+                        stroke-width="1.7" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/>
+                        <path d="M12 20v2"/>
+                        <path d="m4.93 4.93 1.42 1.42"/>
+                        <path d="m17.65 17.65 1.42 1.42"/>
+                        <path d="M2 12h2"/>
+                        <path d="M20 12h2"/>
+                        <path d="m4.93 19.07 1.42-1.42"/>
+                        <path d="m17.65 6.35 1.42-1.42"/>
+                    </svg>
+
+                </button>
             </header>
         <div id="kc-content">
             <div id="kc-content-wrapper">
